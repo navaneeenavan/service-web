@@ -10,7 +10,7 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       component={(props) =>
-        isAuthenticated ? (
+        !isAuthenticated ? (
           <Redirect exact to={userType === "STUDENT" ? "/student" : userType === "SECRETARY" ? "/secretary" : "/committee"} />
         ) : (
           <Component {...props} />

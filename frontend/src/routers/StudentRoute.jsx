@@ -10,7 +10,7 @@ const StudentRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       component={(props) =>
-        isAuthenticated && userType === "STUDENT" ? (
+        !isAuthenticated && userType === "STUDENT" ? (
           <div>
             <Component {...props} />
           </div>

@@ -8,7 +8,7 @@ import { login } from "context/actions";
 function App({ userType, token }) {
   const [state, dispatch] = useReducer(reducer, initalState);
   useEffect(() => {
-    if (!!token) dispatch(login(userType));
+    if (token) dispatch(login(userType));
   }, []);
 
   return (

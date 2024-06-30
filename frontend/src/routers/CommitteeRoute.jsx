@@ -11,7 +11,7 @@ const CommitteeRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       component={(props) =>
-        isAuthenticated && userType === "COMMITTEE" ? (
+         userType === "COMMITTEE" ? (
           <div>
             <Component {...props} />
           </div>

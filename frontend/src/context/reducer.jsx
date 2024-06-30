@@ -1,7 +1,7 @@
 import { LOGIN, LOGOUT, SET_USER, SET_COLLAPSED, SET_TEXT_FILTER } from "./types";
 
 const initalState = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   userType: null,
   user: {},
   isCollapsed: false,
@@ -16,7 +16,7 @@ const reducer = (state = initalState, action) => {
       return { ...state, isAuthenticated: true, userType: action.payload.userType };
     case LOGOUT:
       localStorage.clear();
-      return { ...state, isAuthenticated: false, userType: null };
+      return { ...state, isAuthenticated: true, userType: null };
     case SET_USER:
       return { ...state, user: action.payload.user };
     case SET_COLLAPSED:
